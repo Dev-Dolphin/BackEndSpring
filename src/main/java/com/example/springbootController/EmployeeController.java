@@ -4,10 +4,7 @@ package com.example.springbootController;
 import com.example.springbootModel.Employee;
 import com.example.springbootRepository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,8 +16,9 @@ public class EmployeeController {
     private EmployeeRepository employeeRepository;
 
     //get all employee
+    @CrossOrigin
     @GetMapping("/employee")
-    public List<Employee> getAllEmloyees() {
+    public List<Employee> getAllEmloyee() {
         return employeeRepository.findAll();
     }
 
